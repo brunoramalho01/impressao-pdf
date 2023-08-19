@@ -11,17 +11,10 @@
 
     <script>
         document.getElementById("imprimirButton").addEventListener("click", function() {
-            // Chama o script PHP para imprimir
-            fetch("imprimir.php")
-                .then(response => response.text())
-                .then(data => {
-                    console.log(data);
-                    alert("Relatório impresso!");
-                })
-                .catch(error => {
-                    console.error("Erro ao imprimir: ", error);
-                });
-        });
+        // Abre a página "gerar_pdf.php" em uma nova aba
+        const newWindow = window.open("gerar_pdf.php", "_blank");
+        newWindow.focus();
+    });
     </script>
 </body>
 </html>
